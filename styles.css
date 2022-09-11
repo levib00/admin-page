@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 .page-container {
     display: grid;
-    grid-template: 1fr 6fr / 1fr 4fr;
+    grid-template: 200px 6fr / 1fr 4fr;
     margin: -10px;
 }
 .sidebar {
@@ -16,16 +18,67 @@
     padding: 15px;
     background-color: #1c92d2;
     color: #ffffff;
+    font-size: 32px;
 }
 .sidebar-lists {
     display: grid;
     grid-template-rows: 150px 150px;
+    row-gap: 150px;
+}
+.sidebar-lists img {
+    width: 26px;
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(204deg) brightness(105%) contrast(101%);
+}
+.nav-menu li,
+.support-menu li {
+    display:grid;
+    grid-template-columns: 26px 290px;
+    column-gap: 20px;
+    align-items: center;
+    justify-items: left;
 }
 .header {
     display: grid;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    margin-top: 10px
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+
+}
+.header input {
+    width: 600px;
+    height: 32px;
+    border-radius: 25px;
+    background-color: #e1e7ef;
+    appearance: none;
+    border: none;
+    position: relative;
+}
+.header input::placeholder {
+    position: relative;
+    left: 20px;
+}
+.header img {
+    width: 25px;
+    position: relative;
+    top: 7px;
+    margin-left: 50px;
+}
+.profile-admin {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 1fr;
+}
+.buttons {
+    grid-column: 2 /3;
+}
+.main-profile {
+    grid-column: 1/2;
+    display: flex;
+}
+#main-pfp {
+    width: 42px;
 }
 .content-container {
     grid-column: 2 / 3;
@@ -43,12 +96,12 @@
 .card-container {
     display: grid;
     grid-area: 1 / 1 / 3 / 2;
-    grid-template: 1fr / repeat(auto-fit, minmax(300px,0.5fr));
+    grid-template: 1fr / repeat(auto-fit, minmax(400px,0.5fr));
     column-gap: 25px;
     row-gap: 20px;
 }
 .card {
-    border: 2px black solid;
+    border-left: orange solid 6px;
     height: 200px;
 }
 .announcements-container {
@@ -59,7 +112,8 @@
     grid-area: 2 / 2 / 3 / 3;
     margin-bottom: 16px;
 }
-.trending, .announcements {
+.trending, 
+.announcements {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
@@ -69,8 +123,9 @@
 .announcements, 
 .trending {
     background-color: #ffffff;
+    border-radius: 9px;
+    box-shadow: black 0px 0px 9px -4px ;
 }
-
 ul {
     list-style: none;
 }
